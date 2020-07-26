@@ -1,5 +1,5 @@
 import React,{useState,useEffect}from 'react';
-import logo from './logo.svg';
+import LineGraph from './LineGraph'
 import Map from './Map'
 import './App.css';
 import Table from './Table.js'
@@ -86,6 +86,7 @@ function App() {
         <h3>Live Cases by Country</h3>
         <Table countries={tableData}/>
         <h3>Worldwide new cases</h3>
+        <LineGraph/>
        </CardContent>
     </Card>
     </div>
