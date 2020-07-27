@@ -14,7 +14,7 @@ const casesTypeColors={
     half_op:"rgba(125, 215, 29, 0.5)",
     multiplier:1200,
   },
-  death:{
+  deaths:{
     hex:"#fb4443",
     rgb:"rgb(251,68,67)",
     half_op:"rgba(251, 68, 67, 0.5)",
