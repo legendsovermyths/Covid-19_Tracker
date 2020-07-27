@@ -92,7 +92,7 @@ return chartData;
         ]
       }}
      />
-   )}
+   )} 
     </div>
   )
 }
