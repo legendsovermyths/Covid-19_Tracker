@@ -1,11 +1,11 @@
-import React,{useState,useEffect}from 'react';
+import React,{useState, useEffect}from 'react';
 import LineGraph from './LineGraph'
 import "leaflet/dist/leaflet.css";
 import Map from './Map'
 import './App.css';
 import Table from './Table.js'
 import InfoBox from "./InfoBox.js"
-import {sortData} from "./utils"
+import {sortData, prettyPrintStat} from "./utils"
 import {FormControl,
         MenuItem,
         Select,
@@ -80,9 +80,9 @@ function App() {
      </FormControl>
      </div>
      <div className="app_stats">
-       <InfoBox title="Coronavirus cases" cases={countryInfo.todayCases}  total={countryInfo.cases}/>
-       <InfoBox title="Recovered" cases={countryInfo.todayRecovered} total={countryInfo.recovered}/>
-       <InfoBox title="Deaths" cases={countryInfo.todayDeaths} total={countryInfo.deaths}/>
+       <InfoBox title="Coronavirus Cases" cases={prettyPrintStat(countryInfo.todayCases)}  total={prettyPrintStat(countryInfo.cases)}/>
+       <InfoBox title="Recovered" cases={prettyPrintStat(countryInfo.todayRecovered)} total={prettyPrintStat(countryInfo.recovered)}/>
+       <InfoBox title="Deaths" cases={prettyPrintStat(countryInfo.todayDeaths)} total={prettyPrintStat(countryInfo.deaths)}/>
      </div>
      <div className="map_stats">
        <Map countries={mapCountries} center={mapCenter} zoom={mapZoom}/>
