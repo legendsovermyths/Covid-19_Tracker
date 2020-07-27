@@ -81,9 +81,9 @@ function App() {
      </FormControl>
      </div>
      <div className="app_stats">
-       <InfoBox onClick={e=>setCasesType('cases')} title="Coronavirus Cases" cases={prettyPrintStat(countryInfo.todayCases)}  total={prettyPrintStat(countryInfo.cases)}/>
-       <InfoBox onClick={e=> setCasesType("recovered")}title="Recovered" cases={prettyPrintStat(countryInfo.todayRecovered)} total={prettyPrintStat(countryInfo.recovered)}/>
-       <InfoBox onClick={e=> setCasesType("deaths")}title="Deaths" cases={prettyPrintStat(countryInfo.todayDeaths)} total={prettyPrintStat(countryInfo.deaths)}/>
+       <InfoBox isRed={true} active={casesType==="cases"} onClick={e=>setCasesType('cases')} title="Coronavirus Cases" cases={prettyPrintStat(countryInfo.todayCases)}  total={prettyPrintStat(countryInfo.cases)}/>
+       <InfoBox active={casesType==="recovered"} onClick={e=> setCasesType("recovered")}title="Recovered" cases={prettyPrintStat(countryInfo.todayRecovered)} total={prettyPrintStat(countryInfo.recovered)}/>
+       <InfoBox isRed={true} active={casesType==="deaths"} onClick={e=> setCasesType("deaths")}title="Deaths" cases={prettyPrintStat(countryInfo.todayDeaths)} total={prettyPrintStat(countryInfo.deaths)}/>
      </div>
      <div className="map_stats">
        <Map casesType={casesType} countries={mapCountries} center={mapCenter} zoom={mapZoom}/>
@@ -93,8 +93,8 @@ function App() {
        <CardContent>
         <h3>Live Cases by Country</h3>
         <Table countries={tableData}/>
-        <h3>Worldwide new cases</h3>
-        <LineGraph/>
+        <h3>Worldwide new {casesType}</h3>
+        <LineGraph casesType={casesType}/>
        </CardContent>
     </Card>
     </div>
