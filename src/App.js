@@ -1,5 +1,6 @@
 import React,{useState, useEffect}from 'react';
 import LineGraph from './LineGraph'
+import Footer from "./Footer.js"
 import "leaflet/dist/leaflet.css";
 import Map from './Map'
 import './App.css';
@@ -66,7 +67,8 @@ function App() {
 
 
   return (
-    <div className="app">
+    <div>
+      <div className="app">
      <div className="app_left">
      <div className="app_header">
      <h1>COVID-19 TRACKER</h1>
@@ -97,6 +99,7 @@ function App() {
         <LineGraph className="app_graph" casesType={casesType}/>
        </CardContent>
     </Card>
+      </div>
     </div>
   );
 }
